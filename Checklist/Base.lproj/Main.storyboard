@@ -16,14 +16,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="haY-wP-VYe">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.333332061767578"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="haY-wP-VYe" id="j1k-p3-46w">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="43.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="370" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByP-OM-yrL">
-                                            <rect key="frame" x="20" y="11.000000000000002" width="330" height="20.666666666666671"/>
+                                            <rect key="frame" x="20" y="11" width="330" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -79,6 +79,10 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="done:" destination="zwe-L7-8ac" eventType="editingDidEnd" id="KZx-xQ-uyY"/>
+                                                        <outlet property="delegate" destination="zwe-L7-8ac" id="clm-S5-SVf"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -94,16 +98,18 @@
                     <navigationItem key="navigationItem" title="Title" id="PXu-dF-tsN">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="82l-Qa-CT2">
                             <connections>
-                                <action selector="done:" destination="zwe-L7-8ac" id="nfH-lP-Bgk"/>
+                                <action selector="cancel:" destination="zwe-L7-8ac" id="Kav-Pv-zPx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="itJ-P9-Vum">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add" id="itJ-P9-Vum">
                             <connections>
-                                <action selector="cancel:" destination="zwe-L7-8ac" id="C15-jC-vG4"/>
+                                <action selector="done:" destination="zwe-L7-8ac" id="hye-Z6-1tS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButton" destination="itJ-P9-Vum" id="FDd-ke-l22"/>
+                        <outlet property="cancelBarButton" destination="82l-Qa-CT2" id="Ebv-PB-8t5"/>
                         <outlet property="textField" destination="MVc-Bj-9z3" id="ulE-3w-JXg"/>
                     </connections>
                 </tableViewController>
