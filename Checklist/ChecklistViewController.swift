@@ -66,13 +66,21 @@ class ChecklistViewController: UITableViewController {
         if let label = cell.viewWithTag(1000) as? UILabel {
             label.text = item.text
         }
+        
+        if let checkmark = cell.viewWithTag(1001) as? UILabel {
+            checkmark.text = "√"
+        }
     }
     
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+        guard let checkmark = cell.viewWithTag(1001) as? UILabel else {
+            return
+        }
+        
         if item.checked {
-            cell.accessoryType = .none
+            checkmark.text = "√"
         } else {
-            cell.accessoryType = .checkmark
+            checkmark.text = ""
         }
         item.toggleChecked()
     }
@@ -81,6 +89,15 @@ class ChecklistViewController: UITableViewController {
         if segue.identifier == "AddItemSegue" {
             if let addItemViewController = segue.destination as? AddItemTableViewController {
                 addItemViewController.delegate = self
+                addItemViewController.todoList = todoList
+            }
+        } else if segue.identifier == "EditItemSegue" {
+            if let addItemViewController = segue.destination as? AddItemTableViewController {
+                if let cell = sender as? UITableViewCell ,
+                    let indexPath = tableView.indexPath(for: cell) {
+                    let item = todoList.todos[indexPath.row]
+                    addItemViewController.itemToEdit = item
+                }
             }
         }
     }

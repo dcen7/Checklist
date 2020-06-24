@@ -23,19 +23,31 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByP-OM-yrL">
-                                            <rect key="frame" x="20" y="10.999999999999998" width="311" height="21.333333333333329"/>
+                                            <rect key="frame" x="54" y="10.999999999999998" width="41.666666666666657" height="21.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQv-hA-o96">
+                                            <rect key="frame" x="20" y="10" width="13" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="ByP-OM-yrL" secondAttribute="trailing" constant="20" symbolic="YES" id="9Cw-an-VZ8"/>
+                                        <constraint firstItem="kQv-hA-o96" firstAttribute="top" secondItem="j1k-p3-46w" secondAttribute="topMargin" constant="-1" id="2xX-tW-XYL"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ByP-OM-yrL" secondAttribute="trailing" symbolic="YES" id="9Cw-an-VZ8"/>
                                         <constraint firstItem="ByP-OM-yrL" firstAttribute="top" secondItem="j1k-p3-46w" secondAttribute="top" constant="11" id="Nud-TZ-zJT"/>
-                                        <constraint firstItem="ByP-OM-yrL" firstAttribute="leading" secondItem="j1k-p3-46w" secondAttribute="leading" constant="20" symbolic="YES" id="dce-id-Jbh"/>
+                                        <constraint firstItem="kQv-hA-o96" firstAttribute="leading" secondItem="j1k-p3-46w" secondAttribute="leadingMargin" id="XuP-Jc-NM9"/>
+                                        <constraint firstItem="ByP-OM-yrL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kQv-hA-o96" secondAttribute="trailing" constant="8" symbolic="YES" id="YYi-p8-PMU"/>
+                                        <constraint firstItem="ByP-OM-yrL" firstAttribute="leading" secondItem="j1k-p3-46w" secondAttribute="leading" constant="54" id="dce-id-Jbh"/>
                                         <constraint firstAttribute="bottom" secondItem="ByP-OM-yrL" secondAttribute="bottom" constant="11.67" id="jMf-3q-7At"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="zwe-L7-8ac" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="dFj-Lk-e9b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -101,7 +113,7 @@
                                 <action selector="cancel:" destination="zwe-L7-8ac" id="Kav-Pv-zPx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add" id="itJ-P9-Vum">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="itJ-P9-Vum">
                             <connections>
                                 <action selector="done:" destination="zwe-L7-8ac" id="hye-Z6-1tS"/>
                             </connections>
@@ -136,4 +148,7 @@
             <point key="canvasLocation" x="101.44927536231884" y="105.97826086956522"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dFj-Lk-e9b"/>
+    </inferredMetricsTieBreakers>
 </document>
