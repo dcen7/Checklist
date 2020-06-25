@@ -8,14 +8,15 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate: class  {
-    func addItemViewControllerDidCancel(_ controller: AddItemTableViewController)
-    func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem)
+protocol ItemDetailViewControllerDelegate: class  {
+    func itemdetailviewcontrollerDidCancel(_ controller: ItemDetailViewController)
+    func itemdetailviewcontroller(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func itemdetailviewcontroller(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 
-class AddItemTableViewController: UITableViewController {
+class ItemDetailViewController: UITableViewController {
     
-    weak var delegate: AddItemViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
     weak var todoList: TodoList?
     weak var itemToEdit: ChecklistItem?
 
@@ -25,18 +26,23 @@ class AddItemTableViewController: UITableViewController {
     @IBOutlet var textField: UITextField!
     
     @IBAction func cancel(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        delegate?.addItemViewControllerDidCancel(self)
+        
+        delegate?.itemdetailviewcontrollerDidCancel(self)
     }
     
     @IBAction func done(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        let item = ChecklistItem()
-        if let textFieldText = textField.text {
-            item.text = textFieldText
+        if let item = itemToEdit, let text = textField.text {
+            item.text = text
+            delegate?.itemdetailviewcontroller(self, didFinishAdding: item)
+        } else {
+            if let item = todoList?.newTodo() {
+                if let textFieldText = textField.text {
+                    item.text = textFieldText
+                }
+                item.checked = false
+                delegate?.itemdetailviewcontroller(self, didFinishAdding: item)
+            }
         }
-        item.checked = false
-        delegate?.addItemViewController(self, didFinishAdding: item)
     }
     
     
@@ -62,7 +68,7 @@ class AddItemTableViewController: UITableViewController {
   
 }
 
-extension AddItemTableViewController: UITextFieldDelegate {
+extension ItemDetailViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false

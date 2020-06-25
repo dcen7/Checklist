@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB4A316B249C1DD500333886 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A316A249C1DD500333886 /* AddItemTableViewController.swift */; };
+		FB4A316B249C1DD500333886 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A316A249C1DD500333886 /* ItemDetailViewController.swift */; };
 		FB4E1EFA2493F8B700C419BA /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E1EF92493F8B700C419BA /* ChecklistItem.swift */; };
 		FB4E1EFC2496896300C419BA /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E1EFB2496896300C419BA /* TodoList.swift */; };
+		FBA73F3424A4D0AE004D1018 /* ChecklistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA73F3324A4D0AE004D1018 /* ChecklistTableViewCell.swift */; };
 		FBB5AFAF24919A9B00F90FC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5AFAE24919A9B00F90FC5 /* AppDelegate.swift */; };
 		FBB5AFB124919A9B00F90FC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5AFB024919A9B00F90FC5 /* SceneDelegate.swift */; };
 		FBB5AFB324919A9B00F90FC5 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5AFB224919A9B00F90FC5 /* ChecklistViewController.swift */; };
@@ -19,9 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB4A316A249C1DD500333886 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
+		FB4A316A249C1DD500333886 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		FB4E1EF92493F8B700C419BA /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		FB4E1EFB2496896300C419BA /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		FBA73F3324A4D0AE004D1018 /* ChecklistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableViewCell.swift; sourceTree = "<group>"; };
 		FBB5AFAB24919A9B00F90FC5 /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB5AFAE24919A9B00F90FC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB5AFB024919A9B00F90FC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,13 +67,14 @@
 				FBB5AFAE24919A9B00F90FC5 /* AppDelegate.swift */,
 				FBB5AFB024919A9B00F90FC5 /* SceneDelegate.swift */,
 				FBB5AFB224919A9B00F90FC5 /* ChecklistViewController.swift */,
+				FBA73F3324A4D0AE004D1018 /* ChecklistTableViewCell.swift */,
 				FBB5AFB424919A9B00F90FC5 /* Main.storyboard */,
 				FBB5AFB724919AA100F90FC5 /* Assets.xcassets */,
 				FBB5AFB924919AA100F90FC5 /* LaunchScreen.storyboard */,
 				FBB5AFBC24919AA100F90FC5 /* Info.plist */,
 				FB4E1EF92493F8B700C419BA /* ChecklistItem.swift */,
 				FB4E1EFB2496896300C419BA /* TodoList.swift */,
-				FB4A316A249C1DD500333886 /* AddItemTableViewController.swift */,
+				FB4A316A249C1DD500333886 /* ItemDetailViewController.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -149,7 +152,8 @@
 			files = (
 				FB4E1EFC2496896300C419BA /* TodoList.swift in Sources */,
 				FBB5AFB324919A9B00F90FC5 /* ChecklistViewController.swift in Sources */,
-				FB4A316B249C1DD500333886 /* AddItemTableViewController.swift in Sources */,
+				FB4A316B249C1DD500333886 /* ItemDetailViewController.swift in Sources */,
+				FBA73F3424A4D0AE004D1018 /* ChecklistTableViewCell.swift in Sources */,
 				FBB5AFAF24919A9B00F90FC5 /* AppDelegate.swift in Sources */,
 				FBB5AFB124919A9B00F90FC5 /* SceneDelegate.swift in Sources */,
 				FB4E1EFA2493F8B700C419BA /* ChecklistItem.swift in Sources */,
